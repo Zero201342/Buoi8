@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số lớn nhất và bé nhất</title>
+</head>
+<body>
+    <h1>Nhập dãy số và in ra số lớn nhất, nhỏ nhất</h1>
+
+    <label for="numbers">Nhập 1 dãy số (cách nhau bằng dấu phẩy): </label>
+    <input type="text" id="numbers" placeholder="Nhập dãy số">
+    <button onclick="findMaxMin()">Tìm SLN, SLN</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function findMaxMin() {
+
+            let input = document.getElementById('numbers').value;
+
+            let numberArray = input.split(',').map(Number);
+
+            let maxNumber = Math.max(...numberArray);
+            let minNumber = Math.min(...numberArray);
+
+            document.getElementById('result').innerHTML = `Số lớn nhất: ${maxNumber}, Số nhỏ nhất: ${minNumber}`;
+        }
+    </script>
+
+</body>
+</html>
